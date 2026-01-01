@@ -9,7 +9,7 @@ async function bootstrap() {
   app.connectMicroservice<MicroserviceOptions>({
     transport: Transport.GRPC,
     options: {
-      package: 'hero',
+      package: 'grpcPackage',
       protoPath: path.join(
         process.cwd(),
         '/src/submodules/grpc/proto/hero.proto',
