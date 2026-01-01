@@ -1,0 +1,19 @@
+import { Module } from '@nestjs/common';
+import { IndexController } from './controlllers/index.controller';
+import { GraphqlModule } from './graphql/graphql.module';
+import { GrpcModule } from './grpc/grpc.module';
+import { RouterModule } from '@nestjs/core';
+
+@Module({
+  imports: [
+    GraphqlModule,
+    GrpcModule,
+    RouterModule.register([
+      { path: 'graphql', module: GraphqlModule },
+      { path: 'grpc', module: GrpcModule },
+    ]),
+  ],
+  controllers: [IndexController],
+  providers: [],
+})
+export class AppModule {}
