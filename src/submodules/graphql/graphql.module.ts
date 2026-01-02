@@ -2,13 +2,14 @@ import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { CatsResolver } from './resolvers/cats.resolver';
-import path from 'path';
+/* import path from 'path'; */
 
 @Module({
   imports: [
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
-      autoSchemaFile: path.join(__dirname, './schema.gql'),
+      /* autoSchemaFile: path.join(__dirname, './schema.gql'), */
+      autoSchemaFile: true,
       playground: true,
     }),
   ],
