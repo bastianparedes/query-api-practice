@@ -8,7 +8,6 @@ import { CatsResolver } from './resolvers/cats.resolver';
   imports: [
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
-      /* autoSchemaFile: path.join(__dirname, './schema.gql'), */
       autoSchemaFile: true,
       playground: true,
     }),

@@ -8,7 +8,10 @@ import { RouterModule } from '@nestjs/core';
   imports: [
     GraphqlModule,
     GrpcModule,
-    RouterModule.register([{ path: 'graphql', module: GraphqlModule }]),
+    RouterModule.register([
+      { path: 'graphql', module: GraphqlModule },
+      { path: 'grpc', module: GrpcModule },
+    ]),
   ],
   controllers: [IndexController],
   providers: [],
